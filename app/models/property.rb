@@ -37,11 +37,3 @@ class Property < Ohm::Model
     puts 'blowing up keywords'
   end
 end
-
-class Image < Ohm::Model
-  attribute :url
-end
-
-class Keyword < Ohm::Model
-  attribute :entry
-end

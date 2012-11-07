@@ -3,7 +3,14 @@
     <%= property.address %>
   </div>
   <div class="box-content nopadding" %>
-    blah blah
+    <div class="row-fluid nopadding">
+      <div class="span8" style="margin: 0">
+        <%= image_tag ImageSuckr::GoogleSuckr.new.get_image_url({'q' => 'property'}) %>
+      </div>
+      <div class="span4">
+        blah blah
+      </div>
+    </div>
   </div>
 </div>
 
