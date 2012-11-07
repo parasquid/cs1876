@@ -39,6 +39,7 @@ class Property < Ohm::Model
   end
 
   def self.filter(search)
+    return all if search.nil?
     self.between(search.type, :type)
   end
 
