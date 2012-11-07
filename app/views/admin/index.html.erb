@@ -1,0 +1,4 @@
+We currently have <%= pluralize(Property.all.count, 'property') %> in the database.
+<%= form_tag admin_seed_path do |f| %>
+  <%= submit_tag 'Add 5 random properties' %>
+<% end %>

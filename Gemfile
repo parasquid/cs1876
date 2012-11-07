@@ -43,3 +43,4 @@ gem 'bootstrap-sass', '~> 2.0.4.0'
 
 # for seeding
 gem 'image_suckr'
+gem 'ffaker'
