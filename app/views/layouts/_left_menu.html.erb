@@ -1,0 +1,17 @@
+<div class='box' style='position: fixed; width: 287px;'>
+  <div class='box-title'>
+    Search
+  </div>
+  <div class='box-content'>
+    <%= form_for (@search || Search.new), url: '/properties/search', method: :post do |f| %>
+      <div>
+        <%= f.label :keywords %>
+        <%= f.text_field :keywords %>
+      </div>
+      <div>
+        <%= f.label :type %>
+        <%= f.select :type, PROPERTY_TYPES, {prompt: 'All types'}, {multiple: true, size: PROPERTY_TYPES.count + 1} %>
+      </div>
+    <% end %>
+  </div>
+</div>
