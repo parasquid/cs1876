@@ -38,6 +38,10 @@ class Property < Ohm::Model
     set
   end
 
+  def self.filter(search)
+    self.between(search.type, :type)
+  end
+
   def save
     blowup_images
     blowup_keywords

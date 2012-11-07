@@ -11,7 +11,7 @@ $(document).ready(function(){
                 });                
             }
         } else {
-            fullmenu();
+            //fullmenu();
         }
     });
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
             });                
         }
     } else {
-        fullmenu();
+        //fullmenu();
     }    
     
     // Sticky naviagiot
@@ -126,7 +126,7 @@ $(document).ready(function(){
             atitle = $(this).text();
             $(this).attr({'rel':'tooltip','title':atitle});
         });
-        $('#content').removeClass('span9').addClass('span11');
+        //$('#content').removeClass('span9').addClass('span11');
     }
     
     function fullmenu(){
@@ -134,6 +134,6 @@ $(document).ready(function(){
         $('.leftmenu > ul > li > a').each(function(){
             $(this).attr({'rel':'','title':''});
         });
-        $('#content').removeClass('span11').addClass('span9'); 
+        //$('#content').removeClass('span11').addClass('span9'); 
     }
 });

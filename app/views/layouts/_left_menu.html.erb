@@ -3,15 +3,22 @@
     Search
   </div>
   <div class='box-content'>
-    <%= form_for (@search || Search.new), url: '/properties/search', method: :post do |f| %>
+    <%= form_for (session[:search] || Search.new), url: '/properties/search', method: :get do |f| %>
       <div>
         <%= f.label :keywords %>
         <%= f.text_field :keywords %>
       </div>
       <div>
         <%= f.label :type %>
-        <%= f.select :type, PROPERTY_TYPES, {prompt: 'All types'}, {multiple: true, size: PROPERTY_TYPES.count + 1} %>
+        <%= f.select :type, PROPERTY_TYPES, {}, {multiple: true, size: PROPERTY_TYPES.count + 1, 'data-placeholder' => 'All property types', style: 'width: 100%;'} %>
       </div>
+      <%= f.submit 'Search' %>
     <% end %>
   </div>
 </div>
+
+<script>
+$(function() {
+    $('#search_type').chosen()
+})
+</script>

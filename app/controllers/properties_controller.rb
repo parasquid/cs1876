@@ -1,8 +1,6 @@
 class PropertiesController < ApplicationController
-  # GET /properties
-  # GET /properties.json
   def index
-    @properties = Property.all
+    @properties = Property.filter(session[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,8 +8,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # GET /properties/1
-  # GET /properties/1.json
   def show
     @property = Property[params[:id]]
 
@@ -21,8 +17,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # GET /properties/new
-  # GET /properties/new.json
   def new
     @property = Property.new
 
@@ -32,13 +26,10 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # GET /properties/1/edit
   def edit
     @property = Property[params[:id]]
   end
 
-  # POST /properties
-  # POST /properties.json
   def create
     @property = Property.new(params[:property])
 
@@ -53,8 +44,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # PUT /properties/1
-  # PUT /properties/1.json
   def update
     @property = Property[params[:id]]
 
@@ -69,8 +58,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # DELETE /properties/1
-  # DELETE /properties/1.json
   def destroy
     @property = Property[params[:id]]
     @property.destroy
@@ -79,5 +66,10 @@ class PropertiesController < ApplicationController
       format.html { redirect_to properties_url }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    session[:search] = Search.new(params[:search])
+    redirect_to properties_path
   end
 end

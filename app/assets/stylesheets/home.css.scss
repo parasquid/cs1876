@@ -1,3 +1,11 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.leftmenu .chzn-container-multi ul li.search-choice {
+  width: 85%;
+  margin: 3px 0 0 5px;
+}
+
+.chzn-choices .search-field input {
+  width: 100% !important;
+}

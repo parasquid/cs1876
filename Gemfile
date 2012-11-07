@@ -40,6 +40,7 @@ gem 'ohm'
 gem 'ohm-contrib'
 
 gem 'bootstrap-sass', '~> 2.0.4.0'
+gem 'chosen-rails'
 
 # for seeding
 #gem 'image_suckr', git: 'git@github.com:parasquid/image_suckr.git'
