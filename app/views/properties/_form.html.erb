@@ -1,0 +1,57 @@
+<%= form_for(@property) do |f| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% @property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :images %><br />
+    <%= f.text_field :images_string %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords_string %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :beds %><br />
+    <%= f.number_field :beds %>
+  </div>
+  <div class="field">
+    <%= f.label :bathrooms %><br />
+    <%= f.number_field :bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :car_spaces %><br />
+    <%= f.number_field :car_spaces %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :desc_title %><br />
+    <%= f.text_field :desc_title %>
+  </div>
+  <div class="field">
+    <%= f.label :desc_body %><br />
+    <%= f.text_field :desc_body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

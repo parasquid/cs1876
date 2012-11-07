@@ -1,0 +1,12 @@
+= Mindvalley Standard Application Theme
+
+# How to install
+
+In your gemfile
+    gem 'mv-standard-app-theme', git: 'git@github.com:mindvalley/mv-standard-app-theme.git', group: assets
+
+In application.scss
+    require mv-standard-app-theme/all
+
+In application.js
+    require mv-standard-app-theme/all

@@ -1,0 +1,27 @@
+<h1>Listing properties</h1>
+
+<table>
+  <tr>
+    <th>Images</th>
+    <th>Keywords</th>
+    <th>Type</th>
+    <th>Price</th>
+    <th>Beds</th>
+    <th>Bathrooms</th>
+    <th>Car spaces</th>
+    <th>Address</th>
+    <th>Desc title</th>
+    <th>Desc body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @properties.each do |property| %>
+    <%= render property %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Property', new_property_path %>

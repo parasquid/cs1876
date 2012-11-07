@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Images:</b>
+  <%= @property.images %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @property.keywords %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @property.type %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @property.price %>
+</p>
+
+<p>
+  <b>Beds:</b>
+  <%= @property.beds %>
+</p>
+
+<p>
+  <b>Bathrooms:</b>
+  <%= @property.bathrooms %>
+</p>
+
+<p>
+  <b>Car spaces:</b>
+  <%= @property.car_spaces %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @property.address %>
+</p>
+
+<p>
+  <b>Desc title:</b>
+  <%= @property.desc_title %>
+</p>
+
+<p>
+  <b>Desc body:</b>
+  <%= @property.desc_body %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
