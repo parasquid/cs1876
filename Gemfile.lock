@@ -124,7 +124,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.0.4.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mv-standard-app-theme!
+  mv-standard-app-theme (= 0.0.1)!
   ohm
   ohm-contrib
   rails (= 3.2.8)

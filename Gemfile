@@ -17,7 +17,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'mv-standard-app-theme', path: 'vendor/private-gems/mv-standard-app-theme'
+  gem 'mv-standard-app-theme', '0.0.1', path: 'vendor/private-gems/mv-standard-app-theme'
 end
 
 gem 'jquery-rails'
