@@ -7,13 +7,28 @@ class Property < Ohm::Model
   set :keywords, :Keyword
 
   attribute :type
+  index :type
+
   attribute :price
+  index :price
+
   attribute :beds
+  index :beds
+
   attribute :bathrooms
+  index :bathrooms
+
   attribute :car_spaces
+  index :car_spaces
+
   attribute :address
+  index :address
+
   attribute :desc_title
+  index :desc_title
+
   attribute :desc_body
+  index :desc_body
 
   def save
     blowup_images

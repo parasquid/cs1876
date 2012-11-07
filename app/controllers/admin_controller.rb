@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   end
 
   def seed
-    1.upto 5 do
+    1.upto 20 do
       property = {}
       property['type'] = PROPERTY_TYPES.sample
       property['price'] = rand(5..1000) * 10000
@@ -20,7 +20,12 @@ class AdminController < ApplicationController
       property['images_string'] = three_images(property['type'])
       Property.new(property).save
     end
-    redirect_to admin_path, notice: 'Generated 5 random properties'
+    redirect_to admin_path, notice: 'Generated 20 random properties'
+  end
+
+  def clear
+    Property.all.each {|p| p.delete }
+    redirect_to admin_path, notice: 'All properties deleted'
   end
 
   private
@@ -30,12 +35,16 @@ class AdminController < ApplicationController
   end
 
   def short_text
-    word_wrap(FILLER_TEXT.sample, 40).split("\n").first
+    word_wrap(FILLER_TEXT.sample, line_width: 40).split("\n").first
   end
 
   def three_images(type)
-    suckr = ImageSuckr::GoogleSuckr.new(rsz: 30)
-    "#{suckr.get_image_url({'q' => type})},#{suckr.get_image_url({'q' => type})},#{suckr.get_image_url({'q' => type})}"
+    suckr = ImageSuckr::GoogleSuckr.new(safe: 'off', start: rand(0..4), imgtype: 'photo', userip: request.remote_ip)
+    images = []
+    1.upto 3 do
+      images << suckr.get_image_url({'q' => "#{type}"})
+    end
+    images.uniq.join(',')
   end
 
 end

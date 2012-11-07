@@ -3,6 +3,7 @@ ParasquidCs1876::Application.routes.draw do
 
   match 'admin' => 'admin#index'
   post 'admin/seed'
+  post 'admin/clear'
 
   resources :properties
 

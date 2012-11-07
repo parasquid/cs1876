@@ -1,4 +1,9 @@
 We currently have <%= pluralize(Property.all.count, 'property') %> in the database.
 <%= form_tag admin_seed_path do |f| %>
-  <%= submit_tag 'Add 5 random properties' %>
+  <%= submit_tag 'Add 20 random properties' %>
 <% end %>
+<%= form_tag admin_clear_path do |f| %>
+  <%= submit_tag 'Clear properties database' %>
+<% end %>
+
+<%= link_to 'back to home page', properties_path %>
