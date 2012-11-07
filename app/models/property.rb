@@ -30,6 +30,14 @@ class Property < Ohm::Model
   attribute :desc_body
   index :desc_body
 
+  def self.between(range, attribute)
+    set = self.find(attribute.to_sym => range.first)
+    range.each do |i|
+      set = set.union(attribute.to_sym => i)
+    end
+    set
+  end
+
   def save
     blowup_images
     blowup_keywords
