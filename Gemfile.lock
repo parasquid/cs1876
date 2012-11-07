@@ -1,5 +1,6 @@
-PATH
-  remote: ../image_suckr
+GIT
+  remote: git@github.com:parasquid/image_suckr.git
+  revision: a6e599d0b21b2bb72aa44fa983dd891cae03344e
   specs:
     image_suckr (0.0.6)
 
