@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   end
 
   def seed
-    1.upto 20 do
+    1.upto 1 do
       property = {}
       property['type'] = PROPERTY_TYPES.sample
       property['price'] = rand(5..1000) * 10000
@@ -16,9 +16,8 @@ class AdminController < ApplicationController
       property['address'] = "#{Faker::Address.street_address}, #{Faker::Address.city} #{Faker::AddressUS.state}, #{Faker::AddressUS.zip_code}"
       property['desc_title'] = short_text
       property['desc_body'] = long_text
-      property['keywords_string'] = short_text.split(' ').join(',').squeeze
       property['images_string'] = three_images(property['type'])
-      Property.new(property).save
+      Property.new(property).save.blowup_keywords
     end
     redirect_to admin_path, notice: 'Generated 20 random properties'
   end

@@ -1,23 +1,25 @@
-<div class="box">
-  <div class="box-title">
-    <%= property.address %>
-  </div>
-  <div class="box-content nopadding" %>
-    <div class="row-fluid nopadding">
-      <div class="span8" style="margin: 0; height: 270px; overflow: hidden;">
-        <%= image_tag property.images_string.split(',').first, style: 'width: 100%; height: 100%' %>
-      </div>
-      <div class="span4">
-        <p>
-          <%= property.type %><br />
-          <%= number_to_currency property.price %><br />
-          <%= property.beds %> <%= property.bathrooms %> <%= property.car_spaces %>
-        </p>
-        <p>
-          <strong><%= property.desc_title %></strong><br />
-          <%= truncate property.desc_body, length: 120 %>
-        </p>
+<%= link_to property do %>
+  <div class="box">
+    <div class="box-title">
+      <%= property.address %>
+    </div>
+    <div class="box-content nopadding" %>
+      <div class="row-fluid nopadding">
+        <div class="span8" style="margin: 0; height: 270px; overflow: hidden;">
+          <%= image_tag property.images_string.split(',').first, style: 'width: 100%; height: 100%' %>
+        </div>
+        <div class="span4">
+          <p>
+            <%= property.type %><br />
+            <%= number_to_currency property.price %><br />
+            <%= property.beds %> <%= property.bathrooms %> <%= property.car_spaces %>
+          </p>
+          <p>
+            <strong><%= property.desc_title %></strong><br />
+            <%= truncate property.desc_body, length: 120 %>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

@@ -44,6 +44,7 @@ gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'chosen-rails'
 
 gem 'quiet_assets'
+gem 'thin'
 
 # for seeding
 gem 'image_suckr', git: 'git://github.com/parasquid/image_suckr.git'

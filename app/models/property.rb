@@ -2,9 +2,8 @@ class Property < Ohm::Model
   include Ohm::Callbacks
 
   attribute :images_string
-  set :images, :Image
-  attribute :keywords_string
-  set :keywords, :Keyword
+
+  collection :keywords, :Keyword
 
   attribute :type
   index :type
@@ -46,22 +45,20 @@ class Property < Ohm::Model
     num_beds = self.between(search.min_beds..search.max_beds, :beds)
     num_bathrooms = self.between(search.min_bathrooms..search.max_bathrooms, :bathrooms)
     num_car_spaces = self.between(search.min_car_spaces..search.max_car_spaces, :car_spaces)
-    property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a
-  end
 
-  def save
-    blowup_keywords
-    super
-  end
+    k_words = Keyword.find(entry: search.keywords.first)
+    search.keywords.each do |keyword|
+      k_words.union(entry: keyword)
+    end
 
-  def update_attributes(attributes)
-    blowup_keywords
-    super(attributes)
+    property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a & k_words.to_a.map {|k| k.property}
   end
-
-  protected
 
   def blowup_keywords
-    puts 'blowing up keywords'
+    (address.split + desc_title.split + desc_body.split).flatten.each do |keyword|
+      keyword = keyword.to_s.downcase.gsub(/[^a-z]/, '')
+      next if keyword.blank?
+      Keyword.create(entry: keyword, property_id: self.id)
+    end
   end
 end
