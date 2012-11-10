@@ -3,7 +3,7 @@
     Search
   </div>
   <div class='box-content'>
-    <%= form_for (session[:search] || Search.new), url: '/properties/search', method: :get do |f| %>
+    <%= form_for (@search), url: '/properties/search', method: :get do |f| %>
       <div>
         <%= f.label :keywords %>
         <%= f.text_field :keywords %>
@@ -18,7 +18,7 @@
       </div>
       <div style="float: right; width: 48%">
         <%= f.label :max_beds %>
-        <%= f.select :max_beds, 0..5, {selected: session[:search].max_beds || 5}, {style: 'width: 100%;'} %>
+        <%= f.select :max_beds, 0..5, {selected: @search.max_beds || 5}, {style: 'width: 100%;'} %>
       </div>
       <div style="float: left; width: 48%">
         <%= f.label :min_price %>
@@ -26,7 +26,7 @@
       </div>
       <div style="float: right; width: 48%">
         <%= f.label :max_price %>
-        <%= f.select :max_price, prices, {selected: session[:search].max_price || 10000000}, {style: 'width: 100%;'} %>
+        <%= f.select :max_price, prices, {selected: @search.max_price || 10000000}, {style: 'width: 100%;'} %>
       </div>
       <%= f.submit 'Search' %>
     <% end %>
