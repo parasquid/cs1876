@@ -23,7 +23,7 @@ class AdminController < ApplicationController
   end
 
   def clear
-    Property.all.each {|p| p.delete }
+    Ohm.flush
     redirect_to admin_path, notice: 'All properties deleted'
   end
 
