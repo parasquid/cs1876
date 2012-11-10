@@ -10,9 +10,9 @@ class AdminController < ApplicationController
       property = {}
       property['type'] = PROPERTY_TYPES.sample
       property['price'] = rand(5..1000) * 10000
-      property['beds'] = rand(1..5)
-      property['bathrooms'] = rand(1..5)
-      property['car_spaces'] = rand(1..5)
+      property['beds'] = rand(0..5)
+      property['bathrooms'] = rand(0..5)
+      property['car_spaces'] = rand(0..5)
       property['address'] = "#{Faker::Address.street_address}, #{Faker::Address.city} #{Faker::AddressUS.state}, #{Faker::AddressUS.zip_code}"
       property['desc_title'] = short_text
       property['desc_body'] = long_text

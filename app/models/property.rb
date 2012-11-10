@@ -43,7 +43,8 @@ class Property < Ohm::Model
     search.type = PROPERTY_TYPES if search.type.include? 'All Property Types'
     property_types = self.between(search.type, :type)
     num_beds = self.between(search.min_beds..search.max_beds, :beds)
-    property_types.to_a & num_beds.to_a
+    price = all.sort_by(:price).to_a.reject {|e| e.price.to_i < search.min_price.to_i || e.price.to_i > search.max_price.to_i}
+    property_types.to_a & num_beds.to_a & price.to_a
   end
 
   def save
