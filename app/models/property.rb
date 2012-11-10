@@ -49,14 +49,14 @@ class Property < Ohm::Model
     k_words = []
     skeywords = search.keywords.strip.downcase.gsub(/[^a-z0-9 ]+/, '').split
     skeywords.each do |keyword|
-      k_words.push Keyword.find(entry: keyword).property
+      k_words.push Keyword.find(entry: keyword)
     end
 
     query = property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a
     if search.keywords.empty?
       query
     else
-      query & k_words
+      query & k_words.to_a.map {|k| k.property}
     end
   end
 
