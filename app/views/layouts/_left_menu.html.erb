@@ -10,25 +10,55 @@
       </div>
       <div>
         <%= f.label :type %>
-        <%= f.select :type, ["All Property Types"] + PROPERTY_TYPES, {}, {multiple: true, size: PROPERTY_TYPES.count + 1, style: 'width: 100%;'} %>
+        <%= f.select :type, ['All Property Types'] + PROPERTY_TYPES, {selected: @search.type || 'All Property Types'}, {multiple: true, size: PROPERTY_TYPES.count + 1, style: 'width: 100%;'} %>
       </div>
-      <div style="float: left; width: 48%">
-        <%= f.label :min_beds %>
-        <%= f.select :min_beds, 0..5, {}, {style: 'width: 100%;'} %>
+      
+      <div>
+        <div style="float: left; width: 48%">
+          <%= f.label :min_beds %>
+          <%= f.select :min_beds, 0..5, {}, {style: 'width: 100%;'} %>
+        </div>
+        <div style="float: right; width: 48%">
+          <%= f.label :max_beds %>
+          <%= f.select :max_beds, 0..5, {selected: @search.max_beds || 5}, {style: 'width: 100%;'} %>
+        </div>
       </div>
-      <div style="float: right; width: 48%">
-        <%= f.label :max_beds %>
-        <%= f.select :max_beds, 0..5, {selected: @search.max_beds || 5}, {style: 'width: 100%;'} %>
+      
+      <div>
+        <div style="float: left; width: 48%">
+          <%= f.label :min_price %>
+          <%= f.select :min_price, prices, {}, {style: 'width: 100%;'} %>
+        </div>
+        <div style="float: right; width: 48%">
+          <%= f.label :max_price %>
+          <%= f.select :max_price, prices, {selected: @search.max_price || 10000000}, {style: 'width: 100%;'} %>
+        </div>
       </div>
-      <div style="float: left; width: 48%">
-        <%= f.label :min_price %>
-        <%= f.select :min_price, prices, {}, {style: 'width: 100%;'} %>
+
+      <div>
+        <div style="float: left; width: 48%">
+          <%= f.label :min_bathrooms %>
+          <%= f.select :min_bathrooms, 0..5, {}, {style: 'width: 100%;'} %>
+        </div>
+        <div style="float: right; width: 48%">
+          <%= f.label :max_bathrooms %>
+          <%= f.select :max_bathrooms, 0..5, {selected: @search.max_bathrooms || 5}, {style: 'width: 100%;'} %>
+        </div>
       </div>
-      <div style="float: right; width: 48%">
-        <%= f.label :max_price %>
-        <%= f.select :max_price, prices, {selected: @search.max_price || 10000000}, {style: 'width: 100%;'} %>
+
+      <div>
+        <div style="float: left; width: 48%">
+          <%= f.label :min_car_spaces %>
+          <%= f.select :min_car_spaces, 0..5, {}, {style: 'width: 100%;'} %>
+        </div>
+        <div style="float: right; width: 48%">
+          <%= f.label :max_car_spaces %>
+          <%= f.select :max_car_spaces, 0..5, {selected: @search.max_car_spaces || 5}, {style: 'width: 100%;'} %>
+        </div>
       </div>
-      <%= f.submit 'Search' %>
+
+      <%= f.submit 'Search', :class => 'btn btn-primary pull-right' %>
+      <div style='clear: both'></div>
     <% end %>
   </div>
 </div>
