@@ -47,12 +47,4 @@ class Search
     @attributes
   end
 
-  def min_price
-    @min_price || 50000
-  end
-
-  def max_price
-    @max_price || 10000000
-  end
-
 end

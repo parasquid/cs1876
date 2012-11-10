@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :init_search
 
   def init_search
-    @search ||= Search.new
+    @search = session[:search] || Search.new
   end
 end
