@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   end
 
   def seed
-    1.upto 1 do
+    1.upto 20 do
       property = {}
       property['type'] = PROPERTY_TYPES.sample
       property['price'] = rand(5..1000) * 10000
