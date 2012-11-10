@@ -51,7 +51,12 @@ class Property < Ohm::Model
       k_words.union(entry: keyword)
     end
 
-    property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a & k_words.to_a.map {|k| k.property}
+    query = property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a
+    if search.keywords.empty?
+      query
+    else
+      query & k_words.to_a.map {|k| k.property}
+    end
   end
 
   def blowup_keywords
