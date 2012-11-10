@@ -46,8 +46,9 @@ class Property < Ohm::Model
     num_bathrooms = self.between(search.min_bathrooms..search.max_bathrooms, :bathrooms)
     num_car_spaces = self.between(search.min_car_spaces..search.max_car_spaces, :car_spaces)
 
-    k_words = Keyword.find(entry: search.keywords.first)
-    search.keywords.each do |keyword|
+    skeywords = search.keywords.strip.downcase.gsub(/[^a-z0-9 ]+/, '').split
+    k_words = Keyword.find(entry: skeywords.first)
+    skeywords.each do |keyword|
       k_words.union(entry: keyword)
     end
 

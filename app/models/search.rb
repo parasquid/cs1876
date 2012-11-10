@@ -63,8 +63,4 @@ class Search
     @max_car_spaces ||= 5
   end
 
-  def keywords=(keywords)
-    @keywords = keywords.to_s.downcase.gsub(/[^a-z]/, '').split
-  end
-
 end
