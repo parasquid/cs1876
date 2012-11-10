@@ -46,17 +46,17 @@ class Property < Ohm::Model
     num_bathrooms = self.between(search.min_bathrooms..search.max_bathrooms, :bathrooms)
     num_car_spaces = self.between(search.min_car_spaces..search.max_car_spaces, :car_spaces)
 
+    k_words = []
     skeywords = search.keywords.strip.downcase.gsub(/[^a-z0-9 ]+/, '').split
-    k_words = Keyword.find(entry: skeywords.first)
     skeywords.each do |keyword|
-      k_words.union(entry: keyword)
+      k_words.push Keyword.find(entry: keyword).property
     end
 
     query = property_types.to_a & num_beds.to_a & price.to_a & num_bathrooms.to_a & num_car_spaces.to_a
     if search.keywords.empty?
       query
     else
-      query & k_words.to_a.map {|k| k.property}
+      query & k_words
     end
   end
 
