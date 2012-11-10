@@ -18,6 +18,7 @@ class AdminController < ApplicationController
       property['desc_body'] = long_text
       property['images_string'] = three_images(property['type'])
       Property.new(property).save.blowup_keywords
+      sleep 1
     end
     redirect_to admin_path, notice: 'Generated 20 random properties'
   end
