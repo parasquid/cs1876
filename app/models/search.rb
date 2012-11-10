@@ -47,4 +47,20 @@ class Search
     @attributes
   end
 
+  def min_bathrooms
+    @min_bathrooms ||= 0
+  end
+
+  def max_bathrooms
+    @max_bathrooms ||= 5
+  end
+
+  def min_car_spaces
+    @min_car_spaces ||= 0
+  end
+
+  def max_car_spaces
+    @max_car_spaces ||= 5
+  end
+
 end

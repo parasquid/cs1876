@@ -1,0 +1,21 @@
+<div>
+  <div style="float: left; width: 48%">
+    <%= f.label :min_bathrooms %>
+    <%= f.select :min_bathrooms, 0..5, {}, {style: 'width: 100%;'} %>
+  </div>
+  <div style="float: right; width: 48%">
+    <%= f.label :max_bathrooms %>
+    <%= f.select :max_bathrooms, 0..5, {selected: @search.max_bathrooms || 5}, {style: 'width: 100%;'} %>
+  </div>
+</div>
+
+<div>
+  <div style="float: left; width: 48%">
+    <%= f.label :min_car_spaces %>
+    <%= f.select :min_car_spaces, 0..5, {}, {style: 'width: 100%;'} %>
+  </div>
+  <div style="float: right; width: 48%">
+    <%= f.label :max_car_spaces %>
+    <%= f.select :max_car_spaces, 0..5, {selected: @search.max_car_spaces || 5}, {style: 'width: 100%;'} %>
+  </div>
+</div>

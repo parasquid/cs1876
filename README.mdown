@@ -1,5 +1,5 @@
 heroku addons:add redistogo:nano
-heroku config:add REDIS_URL=redis://redistogo:dd1df23c4462b03891ced3b63276eff1@slimehead.redistogo.com:9268/
+heroku config:set REDIS_URL=`heroku config:get REDISTOGO_URL`
 
 verify with
 heroku config
