@@ -40,6 +40,7 @@ class Property < Ohm::Model
 
   def self.filter(search)
     return all if search.nil?
+    search.type = PROPERTY_TYPES if search.type.include? 'All Property Types'
     self.between(search.type, :type)
   end
 

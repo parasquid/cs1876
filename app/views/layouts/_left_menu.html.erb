@@ -10,7 +10,7 @@
       </div>
       <div>
         <%= f.label :type %>
-        <%= f.select :type, PROPERTY_TYPES, {}, {multiple: true, size: PROPERTY_TYPES.count + 1, 'data-placeholder' => 'All property types', style: 'width: 100%;'} %>
+        <%= f.select :type, ["All Property Types"] + PROPERTY_TYPES, {}, {multiple: true, size: PROPERTY_TYPES.count + 1, style: 'width: 100%;'} %>
       </div>
       <%= f.submit 'Search' %>
     <% end %>

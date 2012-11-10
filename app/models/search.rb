@@ -2,7 +2,11 @@ class Search
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
-  attr_accessor :keywords, :type
+  attr_accessor :keywords, :type,
+    :min_beds, :max_beds,
+    :min_price, :max_price,
+    :min_bathrooms, :max_bathrooms,
+    :min_car_spaces, :max_car_spaces
 
   def initialize(attributes = {})
     attributes.each do |name, value|
