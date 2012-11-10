@@ -41,7 +41,9 @@ class Property < Ohm::Model
   def self.filter(search)
     return all if search.nil?
     search.type = PROPERTY_TYPES if search.type.include? 'All Property Types'
-    self.between(search.type, :type)
+    property_types = self.between(search.type, :type)
+    num_beds = self.between(search.min_beds..search.max_beds, :beds)
+    property_types.to_a & num_beds.to_a
   end
 
   def save

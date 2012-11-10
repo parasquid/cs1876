@@ -12,6 +12,14 @@
         <%= f.label :type %>
         <%= f.select :type, ["All Property Types"] + PROPERTY_TYPES, {}, {multiple: true, size: PROPERTY_TYPES.count + 1, style: 'width: 100%;'} %>
       </div>
+      <div style="float: left; width: 48%">
+        <%= f.label :min_beds %>
+        <%= f.select :min_beds, 0..5, {}, {style: 'width: 100%;'} %>
+      </div>
+      <div style="float: right; width: 48%">
+        <%= f.label :max_beds %>
+        <%= f.select :max_beds, 0..5, {selected: session[:search].max_beds || 5}, {style: 'width: 100%;'} %>
+      </div>
       <%= f.submit 'Search' %>
     <% end %>
   </div>
