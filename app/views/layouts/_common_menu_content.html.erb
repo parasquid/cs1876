@@ -37,3 +37,14 @@
     <div style='clear: both'></div>
   <% end %>
 </div>
+
+
+
+<script>
+$(function() {
+  $('#search_type option:first-child').click(function() {
+    $('#search_type option').attr('selected', 'selected')
+    $('#search_type option:first-child').removeAttr('selected')
+  })
+})
+</script>
