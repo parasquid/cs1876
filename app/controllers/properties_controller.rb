@@ -13,6 +13,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.text { render 'show', formats: [:html], layout: false }
       format.json { render json: @property }
     end
   end

@@ -15,12 +15,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -42,6 +43,8 @@ gem 'ohm-contrib'
 
 gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'chosen-rails'
+gem 'avgrund_to', git: 'git://github.com/parasquid/avgrund_to.git'
+#gem 'avgrund_to', path: '../avgrund_to'
 
 gem 'quiet_assets'
 gem 'thin'

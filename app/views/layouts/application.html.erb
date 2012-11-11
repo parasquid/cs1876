@@ -14,7 +14,7 @@
         <![endif]-->
   </head>
   <body>
-    <div class="container nopadding">
+    <div class="container nopadding avgrund-contents">
 
       <div class="row-fluid">
         <div class="span12">
@@ -47,6 +47,13 @@
       </div>
     </div>
 
+    <div class="avgrund-cover"></div>
+
+    <div class="avgrund-popup" id="avgrund-modal">
+      <div class="modal-body">
+        <button onclick="avgrund.deactivate();">Close</button>
+      </div>
+    </div>
     <!-- Explorer canvas, for IE6-8 support of canvas elements -->
     <!--[if lt IE 9]>
         <script src="js/excanvas.min.js"></script>

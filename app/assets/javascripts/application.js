@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require bootstrap
+//= require avgrund_to/modal
+//= require avgrund_to/avgrund
 //= require chosen-jquery
 //= require_tree .
