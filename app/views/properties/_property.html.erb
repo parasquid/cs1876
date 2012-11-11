@@ -8,15 +8,17 @@
           <%= image_tag property.images_string.split(',').first, style: 'width: 100%; height: 100%' %>
         </div>
         <div class="span4">
-          <p>
-            <%= property.type %><br />
-            <%= number_to_currency property.price %><br />
-            <%= property.beds %> <%= property.bathrooms %> <%= property.car_spaces %>
-          </p>
-          <p>
-            <strong><%= property.desc_title %></strong><br />
-            <%= truncate property.desc_body, length: 120 %>
-          </p>
+          <div style="margin-right: 10px;">
+            <p>
+              <%= property.type %><br />
+              <%= number_to_currency property.price %><br />
+              <%= property.beds %> <%= property.bathrooms %> <%= property.car_spaces %>
+            </p>
+            <p>
+              <strong><%= property.desc_title %></strong><br />
+              <%= truncate property.desc_body, length: 120 %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
