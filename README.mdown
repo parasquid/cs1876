@@ -3,3 +3,6 @@ heroku config:set REDIS_URL=`heroku config:get REDISTOGO_URL`
 
 verify with
 heroku config
+
+Bed designed by Christopher T. Howlett from The Noun Project
+Bubble Bath designed by Julia Soderberg from The Noun Project

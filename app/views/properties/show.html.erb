@@ -19,7 +19,7 @@
     <h4><%= number_to_currency @property.price %></h4>
   </div>
   <div class="info">
-    <h4><%= @property.type %> <%= @property.beds %> <%= @property.bathrooms %> <%= @property.car_spaces %></h4>
+    <h4><span style="color: darkgray"><%= @property.type %></span> <%= beds(@property.beds) %> <%= baths(@property.bathrooms) %>  <%= cars(@property.car_spaces) %></h4>
   </div>
   <hr />
 </div>
