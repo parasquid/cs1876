@@ -1,5 +1,8 @@
 First, clone the repository
 
+    git clone git://github.com/parasquid/cs1876.git
+    cd cs1876
+
 Next, setup your heroku application
 
     heroku create myapp
