@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+  <% images = @property.images_string.split(',') %>
+  <div class="carousel-inner" style="height: 320px;">
+    <% images.each_with_index do |image, index| %>
+      <div class="item <%= index == 0 ? 'active' : '' %>"><%= image_tag image, style: 'width: 100%;' %></div>
+    <% end %>
+  </div>
 
-<p>
-  <b>Images:</b>
-  <%= @property.images_string %>
-</p>
+  <% if images.count > 1 %>
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  <% end %>
+</div>
 
 <p>
   <b>Type:</b>

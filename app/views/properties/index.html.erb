@@ -1,3 +1,5 @@
 <% @properties.each do |property| %>
+  <%= avgrund_to property, {}, "Show Property" do %>
     <%= render property %>
+  <% end %>
 <% end %>
