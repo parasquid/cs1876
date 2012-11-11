@@ -1,16 +1,15 @@
 GIT
-  remote: git://github.com/parasquid/avgrund_to.git
-  revision: b0d0db0dbc5962d2149c65a3cf1fad7d71afe8f5
-  specs:
-    avgrund_to (0.0.1)
-      jquery-rails
-      rails (>= 3.1)
-
-GIT
   remote: git://github.com/parasquid/image_suckr.git
   revision: a6e599d0b21b2bb72aa44fa983dd891cae03344e
   specs:
     image_suckr (0.0.6)
+
+PATH
+  remote: ../avgrund_to
+  specs:
+    avgrund_to (0.0.1)
+      jquery-rails
+      rails (>= 3.1)
 
 GEM
   remote: https://rubygems.org/

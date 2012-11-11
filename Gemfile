@@ -43,8 +43,8 @@ gem 'ohm-contrib'
 
 gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'chosen-rails'
-gem 'avgrund_to', git: 'git://github.com/parasquid/avgrund_to.git'
-#gem 'avgrund_to', path: '../avgrund_to'
+#gem 'avgrund_to', git: 'git://github.com/parasquid/avgrund_to.git'
+gem 'avgrund_to', path: '../avgrund_to'
 
 gem 'quiet_assets'
 gem 'thin'
