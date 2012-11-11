@@ -48,6 +48,7 @@ gem 'avgrund_to', git: 'git://github.com/parasquid/avgrund_to.git'
 
 gem 'quiet_assets'
 gem 'thin'
+gem 'turbolinks'
 
 # for seeding
 gem 'image_suckr', git: 'git://github.com/parasquid/image_suckr.git'

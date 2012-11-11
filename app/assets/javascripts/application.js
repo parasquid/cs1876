@@ -17,4 +17,5 @@
 //= require avgrund_to/modal
 //= require avgrund_to/avgrund
 //= require chosen-jquery
+//= require turbolinks
 //= require_tree .
