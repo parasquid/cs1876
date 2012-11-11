@@ -12,47 +12,19 @@
     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   <% end %>
 </div>
-
-<p>
-  <b>Type:</b>
-  <%= @property.type %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @property.price %>
-</p>
-
-<p>
-  <b>Beds:</b>
-  <%= @property.beds %>
-</p>
-
-<p>
-  <b>Bathrooms:</b>
-  <%= @property.bathrooms %>
-</p>
-
-<p>
-  <b>Car spaces:</b>
-  <%= @property.car_spaces %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @property.address %>
-</p>
-
-<p>
-  <b>Desc title:</b>
-  <%= @property.desc_title %>
-</p>
-
-<p>
-  <b>Desc body:</b>
-  <%= @property.desc_body %>
-</p>
-
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<div style="overflow-y: auto">
+<div class="address">
+  <h3><%= @property.address %></h3>
+  <div class="price" style="float:right">
+    <h4><%= number_to_currency @property.price %></h4>
+  </div>
+  <div class="info">
+    <h4><%= @property.type %> <%= @property.beds %> <%= @property.bathrooms %> <%= @property.car_spaces %></h4>
+  </div>
+  <hr />
+</div>
+<div class="description">
+  <h3>Property Description</h3>
+  <h4><%= @property.desc_title %></h4>
+  <p><%= @property.desc_body %></p>
+</div>

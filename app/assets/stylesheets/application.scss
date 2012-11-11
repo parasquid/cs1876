@@ -16,4 +16,8 @@
 @import 'bootstrap';
 .modal-body {
   max-height: 570px;
+  overflow-y: hidden;
+}
+.price {
+  color: darkred;
 }
