@@ -7,16 +7,15 @@
         <div class="span8" style="margin: 0; height: 270px; overflow: hidden;">
           <%= image_tag property.images_string.split(',').first, style: 'width: 100%; height: 100%' %>
         </div>
-        <div class="span4">
-          <div style="margin-right: 10px;">
+        <div class="span4" style="margin: 18px 0 0 10px">
+          <div style="margin: 0 10px 0 0">
+            <div class="price"><h4><%= number_to_currency property.price %></h4></div>
             <p>
               <%= property.type %><br />
-              <%= number_to_currency property.price %><br />
-              <%= property.beds %> <%= property.bathrooms %> <%= property.car_spaces %>
+              <%= beds(property.beds) %> <%= baths(property.bathrooms) %>  <%= cars(property.car_spaces) %>
             </p>
-            <p>
-              <strong><%= property.desc_title %></strong><br />
-              <%= truncate property.desc_body, length: 120 %>
+            <h4><%= property.desc_title %></h4>
+            <%= truncate property.desc_body, length: 170 %>
             </p>
           </div>
         </div>
