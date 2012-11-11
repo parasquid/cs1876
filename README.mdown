@@ -36,4 +36,4 @@ Bed designed by Christopher T. Howlett from The Noun Project
 
 Bubble Bath designed by Julia Soderberg from The Noun Project
 
-http://f.cl.ly/items/2F382r2u3T1B1J100j0i/Screen%20Shot%202012-11-11%20at%206.18.53%20PM.png
+![Sample screenshot](http://f.cl.ly/items/2F382r2u3T1B1J100j0i/Screen%20Shot%202012-11-11%20at%206.18.53%20PM.png)
