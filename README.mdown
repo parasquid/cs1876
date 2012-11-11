@@ -1,17 +1,29 @@
 First, clone the repository
+
 Then setup heroku, either through the gem
+
     gem install heroku
+
 Or through the heroku toolbelt. https://toolbelt.heroku.com/
+
 Next, install the redistogo heroku addon (we're gonna use the free nano plan)
+
     heroku addons:add redistogo:nano
+
 The webapp will use the environment variable REDIS_URL to connect to the redis server
+
     heroku config:set REDIS_URL=`heroku config:get REDISTOGO_URL`
+
 Verify the configuration with
+
   heroku config
 
+Sample site: http://parasquid-cs1876.herokuapp.com/
 
 Acknowledgments and citations
+
 Bed designed by Christopher T. Howlett from The Noun Project
+
 Bubble Bath designed by Julia Soderberg from The Noun Project
 
 http://f.cl.ly/items/2F382r2u3T1B1J100j0i/Screen%20Shot%202012-11-11%20at%206.18.53%20PM.png
