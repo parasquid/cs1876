@@ -1,5 +1,9 @@
 First, clone the repository
 
+Next, setup your heroku application
+
+    heroku create myapp
+
 Then setup heroku, either through the gem
 
     gem install heroku
@@ -16,7 +20,13 @@ The webapp will use the environment variable REDIS_URL to connect to the redis s
 
 Verify the configuration with
 
-  heroku config
+    heroku config
+
+You can now try visiting your site
+
+    heroku open
+
+The site is initially empty, so you'll have to visit /admin en create seed files
 
 Sample site: http://parasquid-cs1876.herokuapp.com/
 
