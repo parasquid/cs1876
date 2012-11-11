@@ -26,7 +26,7 @@ You can now try visiting your site
 
     heroku open
 
-The site is initially empty, so you'll have to visit /admin en create seed files
+The site is initially empty, so you'll have to visit /admin to create seed entries
 
 Sample site: http://parasquid-cs1876.herokuapp.com/
 
