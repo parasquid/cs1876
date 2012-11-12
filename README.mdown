@@ -25,6 +25,8 @@ Verify the configuration with
 
     heroku config
 
+Configure config/config.yml with your desired values
+
 You can now try visiting your site
 
     heroku open

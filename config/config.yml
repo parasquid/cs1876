@@ -1,0 +1,25 @@
+defaults: &defaults
+  :property_types:
+    - 'House'
+    - 'Apartment & Unit'
+    - 'Apartment'
+    - 'Unit'
+    - 'Townhouse'
+    - 'Villa'
+    - 'Land'
+    - 'Acreage'
+    - 'Rural'
+    - 'Block of Units'
+  :max_beds: 5
+  :max_car_spaces: 5
+  :max_bathrooms: 5
+  :max_price: 10000000
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -16,7 +16,7 @@
       </div>
       <div style="float: right; width: 48%">
         <%= f.label :max_beds %>
-        <%= f.select :max_beds, 0..5, {selected: @search.max_beds || 5}, {style: 'width: 100%;'} %>
+        <%= f.select :max_beds, 0..5, {selected: @search.max_beds || MAX_BEDS}, {style: 'width: 100%;'} %>
       </div>
     </div>
     
@@ -27,7 +27,7 @@
       </div>
       <div style="float: right; width: 48%">
         <%= f.label :max_price %>
-        <%= f.select :max_price, prices, {selected: @search.max_price || 10000000}, {style: 'width: 100%;'} %>
+        <%= f.select :max_price, prices, {selected: @search.max_price || MAX_PRICE}, {style: 'width: 100%;'} %>
       </div>
     </div>
 

@@ -1,5 +1,3 @@
-PROPERTY_TYPES = ['House', 'Apartment & Unit', 'Apartment', 'Unit', 'Townhouse', 'Villa', 'Land', 'Acreage', 'Rural', 'Block of Units']
-
 # shamelessly stolen from http://andymatthews.net/code/fillertext/metropolitan.cfm
 FILLER_TEXT = [
   'Brilliant penthouse dignified ornamental caviar yacht upper benefiting pedigree expensive. Status lifestyle dynasty in impresario rare metropolitan club. Townhome politically architectural cultered bonds, classical brokerage impresario butler wine doctoral club elegant repertoire pedigree. ',
