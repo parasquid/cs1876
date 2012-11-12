@@ -1,5 +1,10 @@
+# normal run of the mill rails scaffold here - nothing to see much
+# except the way you call find
+# in Ohm, to find by id you have to treat it as an array, passing the
+# id inside square brackets []
 class PropertiesController < ApplicationController
   def index
+    # #filter uses the search object to filter the property listings
     @properties = Property.filter(session[:search])
 
     respond_to do |format|
@@ -50,6 +55,9 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.update_attributes(params[:property])
+        # this is probably the only other special change here
+        # in Ohm, doing a #update_attributes does NOT persist the changes
+        # you have to call #save on the model to persist your changes
         format.html { @property.save; redirect_to @property, notice: 'Property was successfully updated.' }
         format.json { head :no_content }
       else

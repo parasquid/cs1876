@@ -5,14 +5,15 @@ class AdminController < ApplicationController
   def index
   end
 
+  # quick and dirty seeding mechanism - because I don't like typing too much :P
   def seed
     1.upto 20 do
       property = {}
       property['type'] = PROPERTY_TYPES.sample
-      property['price'] = rand(5..1000) * 10000
-      property['beds'] = rand(0..5)
-      property['bathrooms'] = rand(0..5)
-      property['car_spaces'] = rand(0..5)
+      property['price'] = rand(5..1000) * (MAX_PRICE / 10000)
+      property['beds'] = rand(0..MAX_BEDS)
+      property['bathrooms'] = rand(0..MAX_BATHROOMS)
+      property['car_spaces'] = rand(0..MAX_CAR_SPACES)
       property['address'] = "#{Faker::Address.street_address}, #{Faker::Address.city} #{Faker::AddressUS.state}, #{Faker::AddressUS.zip_code}"
       property['desc_title'] = short_text
       property['desc_body'] = long_text
@@ -38,6 +39,8 @@ class AdminController < ApplicationController
     word_wrap(FILLER_TEXT.sample, line_width: 40).split("\n").first
   end
 
+  # searches google images using the property type - see the gem I forked for
+  # more yummy details https://github.com/parasquid/image_suckr
   def three_images(type)
     suckr = ImageSuckr::GoogleSuckr.new(safe: 'off', start: rand(0..4), imgtype: 'photo', userip: request.remote_ip)
     images = []

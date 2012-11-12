@@ -1,3 +1,10 @@
+# simple search object that conforms to active record so we can easily use
+# it with Rails helpers like form_for
+# I've added a few helper methods here to help me with debugging (debugging code
+# has already been removed)
+# I should probably extract this pattern out to a gem (or perhaps a gem already
+# exists) but this will suffice for now. Will refactor if I encounter another
+# situation like this
 class Search
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -47,12 +54,20 @@ class Search
     @attributes
   end
 
+  def min_beds
+    @min_beds ||= 0
+  end
+
+  def max_beds
+    @max_beds ||= MAX_BEDS
+  end
+
   def min_bathrooms
     @min_bathrooms ||= 0
   end
 
   def max_bathrooms
-    @max_bathrooms ||= 5
+    @max_bathrooms ||= MAX_BATHROOMS
   end
 
   def min_car_spaces
@@ -60,7 +75,7 @@ class Search
   end
 
   def max_car_spaces
-    @max_car_spaces ||= 5
+    @max_car_spaces ||= MAX_CAR_SPACES
   end
 
 end
