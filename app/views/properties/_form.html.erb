@@ -1,4 +1,4 @@
-<%= form_for(@property) do |f| %>
+<%= form_for @property, html: {:class => 'form-horizontal'} do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -10,44 +10,69 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :images %><br />
-    <%= f.text_field :images_string %>
+  <div class="control-group">
+    <%= f.label :images_string, 'Image URL', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :images_string, {rows: 3, style: 'width: 100%;'} %>
+        <span class="help-inline">Images URL (separated by commas)</span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+  <div class="control-group">
+    <%= f.label :type, 'Property Type', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :type, PROPERTY_TYPES, {}, {style: 'width: 100%;'} %>
+        <span class="help-inline">Choose the Property Type</span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+  <div class="control-group">
+    <%= f.label :price, 'Price', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :price, style: 'width: 100%;' %>
+        <span class="help-inline">Set the price (in Integer, without commas), max: <%= number_to_currency MAX_PRICE %></span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :beds %><br />
-    <%= f.number_field :beds %>
+  <div class="control-group">
+    <%= f.label :beds, 'Beds', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :beds, style: 'width: 100%;' %>
+        <span class="help-inline">Number of beds, max: <%= MAX_BEDS %></span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :bathrooms %><br />
-    <%= f.number_field :bathrooms %>
+  <div class="control-group">
+    <%= f.label :bathrooms, 'Bathrooms', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :bathrooms, style: 'width: 100%;' %>
+        <span class="help-inline">Number of bathrooms, max: <%= MAX_BATHROOMS %></span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :car_spaces %><br />
-    <%= f.number_field :car_spaces %>
+  <div class="control-group">
+    <%= f.label :car_spaces, 'Car Spaces', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :car_spaces, style: 'width: 100%;' %>
+        <span class="help-inline">Number of car spaces, max: <%= MAX_CAR_SPACES %></span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+  <div class="control-group">
+    <%= f.label :address, 'Address', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :address, rows: 2, style: 'width: 100%;' %>
+        <span class="help-inline">Property address</span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :desc_title %><br />
-    <%= f.text_field :desc_title %>
+  <div class="control-group">
+    <%= f.label :desc_title, 'Title', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :desc_title, rows: 2, style: 'width: 100%;' %>
+        <span class="help-inline">Property description (title)</span>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :desc_body %><br />
-    <%= f.text_field :desc_body %>
+  <div class="control-group">
+    <%= f.label :desc_body, 'Body', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :desc_body, rows: 7, style: 'width: 100%;' %>
+        <span class="help-inline">Property description (body)</span>
+      </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit 'Save', :class => 'btn btn-primary pull-right' %>
+  <div style='clear: both'></div>
 <% end %>
